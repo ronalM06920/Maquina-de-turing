@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Turing Machine</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icono.ico" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style_simulation.css" />
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation-->
+
+
+    <!-- ZONA DE SIMULACIÓN-->
+    <section class="page-section portfolio" id="simulation">
+      <div class="container">
+        <div><h1>MAQUINA DE TURING</h1></div>
+        <form action="" class="borde">
+          <div class="row mt-4">
+            <div class="col-5 text-center">
+              <h6 class="font-weight-bold">Pasos:</h6>
+              <h6 id="conteo">0</h6>
+            </div>
+            <div class="col-2 text-center">
+              <h6 class="font-weight-bold" id="aceptado" class="accep"></h6>
+            </div>
+            <div class="col-5 text-center">
+              <h6 class="font-weight-bold">Estado:</h6>
+              <h6 id="estate">Inicial</h6>
+            </div>
+          </div>
+
+          <div class="contend">
+            <div>
+              <img src="assets/img/flecha.svg" alt="flecha" id="flecha" />
+            </div>
+            <div class="cadena" id="cadena">
+              <div class="cuadrado" id="cuadro0"></div>
+              <div class="cuadrado" id="cuadro1"></div>
+              <div class="cuadrado" id="cuadro2"></div>
+              <div class="cuadrado" id="cuadro3"></div>
+              <div class="cuadrado" id="cuadro4"></div>
+              <div class="cuadrado" id="cuadro5"></div>
+              <div class="cuadrado" id="cuadro6"></div>
+              <div class="cuadrado" id="cuadro7"></div>
+              <div class="cuadrado" id="cuadro8"></div>
+              <div class="cuadrado" id="cuadro9"></div>
+              <div class="cuadrado" id="cuadro10"></div>
+              <div class="cuadrado" id="cuadro11"></div>
+              <div class="cuadrado" id="cuadro12"></div>
+              <div class="cuadrado" id="cuadro13"></div>
+              <div class="cuadrado" id="cuadro14"></div>
+              <div class="cuadrado" id="cuadro15"></div>
+              <div class="cuadrado" id="cuadro16"></div>
+              <div class="cuadrado" id="cuadro17"></div>
+              <div class="cuadrado" id="cuadro18"></div>
+              <div class="cuadrado" id="cuadro19"></div>
+              <div class="cuadrado" id="cuadro20"></div>
+              <div class="cuadrado" id="cuadro21"></div>
+              <div class="cuadrado" id="cuadro22"></div>
+              <div class="cuadrado" id="cuadro23"></div>
+            </div>
+          </div>
+
+          <div class="row mt-4 mb-4 form-group">
+            <div class="input-group col-5 justify-content-center">
+              
+              <input
+                id="entrada"
+                type="text"
+                name="cantidad"
+                aria-describedby="basic-addon1"
+                size="25"
+                class="espacio"
+                maxlength="16"
+              />
+              <div class="input-group-append efecto">
+                <button
+                  class="btn btn-secondary font-weight-bold"
+                  id="boton1"
+                  type="button"
+                  value="Cargar"
+                  onclick="cargar()"
+                >
+                  Subir
+                </button>
+              </div>
+            </div>
+
+            <div class="col-3 mt-2">
+              <input type="range" class="custom-range" id="vel" value="4" min="0" max="4"  step="1" disabled="true">
+            </div>
+
+            <div class="col-2 justify-content-end efecto">
+             
+              <input
+                id="boton2"
+                type="reset"
+                value="Ejecutar"
+                onclick="logica()"
+                class="btn btn-secondary font-weight-bold"
+                disabled="true"
+              />
+            </div>
+
+            <div class="col-2 justify-content-start efecto">
+           
+              <input
+                id="stope"
+                type="button"
+                value="Detener"
+                onclick="detener()"
+                class="btn btn-secondary font-weight-bold"
+                disabled="true"
+              />
+            </div>            
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+      src = "https://cdn.jsdelivr.net/npm/@glidejs/glide";
+    </script>
+    <!-- Scripts de la simulación -->
+    <script src="js/app.js"></script>
+    <script src="js/cargar.js"></script>
+    <!-- Alert-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </body>
+</html>
